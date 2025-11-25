@@ -4,11 +4,7 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 
 public class Main extends Application {
-    private Scene startScreen;
-    private Scene playerPickScreen;
-    private Scene roundPickScreen;
-    private Scene gameScreen;
-    private Scene gameOverScreen;
+
 
     public void init(){
         
