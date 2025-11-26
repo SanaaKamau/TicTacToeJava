@@ -11,7 +11,7 @@ public class game {
         player1Turn = true;
         player1Score = 0;
         player2Score = 0;
-        winner = 0;
+        winner = -1; // -1 for no winner, 1 for P1, 2 for P2, 0 for tie
         board = new int[][]{
             {0, 0, 0},
             {0, 0, 0},
