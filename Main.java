@@ -14,7 +14,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) {
         stage.setTitle("TicTacToe Start");
-        MainMenuView mainMenu = new MainMenuView();
+        MainMenuView mainMenu = new MainMenuView(stage);
         stage.setScene(mainMenu.getScene());
         stage.show();
         
