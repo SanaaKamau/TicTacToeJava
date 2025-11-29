@@ -64,6 +64,7 @@ public class game {
 
         }
     }
+    
 
     private int sum(int one, int two, int three){
         return one + two + three;
