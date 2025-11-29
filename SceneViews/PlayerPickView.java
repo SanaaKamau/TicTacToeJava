@@ -8,8 +8,8 @@ import javafx.stage.Stage;
 
 public class PlayerPickView {
     private Scene scene;
-    private Scene MainMenu;
     private StackPane root;
+    private VBox playerBox;
     private Button twoPlayerButton;
     private Button onePlayerButton;
     private Button backButton;
@@ -17,14 +17,16 @@ public class PlayerPickView {
     private Boolean multiplayer;
 
     
-    public PlayerPickView(Stage stage,Scene MainMenu){
-        root = new StackPane();
+    public PlayerPickView(Stage stage){
+       
         this.stage = stage;
-        this.MainMenu = MainMenu;
-
+        playerBox = new VBox();
+        root = new StackPane();
         twoPlayerButton = new Button("2 Players");
         onePlayerButton = new Button("1 Player");
+        playerBox.getChildren().addAll(onePlayerButton,twoPlayerButton);
         backButton = new Button("Back");
+        root.getChildren().addAll(backButton,playerBox);
 
         scene = new Scene(root,600,500);
         
@@ -36,15 +38,21 @@ public class PlayerPickView {
     }
     public void buttonBehaviour(){
         backButton.setOnAction(e -> {
-            stage.setScene(MainMenu);
+            MainMenuView MainMenu = new MainMenuView(stage);
+            stage.setScene(MainMenu.getScene());
         });
         onePlayerButton.setOnAction(e -> {
             multiplayer = false;
-            //stage.setScene()
+            RoundPickView roundPickView = new RoundPickView(stage);
+            roundPickView.setMultiplayer(multiplayer);
+            stage.setScene(roundPickView.getScene());
 
         });
         twoPlayerButton.setOnAction(e -> {
             multiplayer = true;
+            RoundPickView roundPickView = new RoundPickView(stage);
+            roundPickView.setMultiplayer(multiplayer);
+            stage.setScene(roundPickView.getScene());
         });
 
     }

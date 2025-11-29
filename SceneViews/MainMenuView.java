@@ -39,7 +39,7 @@ public class MainMenuView {
     private void buttonBehaviour(){
         
         playButton.setOnAction(e -> {
-            PlayerPickView playerPicker = new PlayerPickView(this.stage,scene);
+            PlayerPickView playerPicker = new PlayerPickView(this.stage);
             stage.setScene(playerPicker.getScene());
         });
         exitButton.setOnAction(e -> {          

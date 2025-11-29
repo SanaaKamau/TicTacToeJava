@@ -64,10 +64,25 @@ public class game {
 
         }
     }
-    
+
 
     private int sum(int one, int two, int three){
         return one + two + three;
+    }
+
+    public void resetScore(){
+         player1Score =0; 
+         player2Score = 0;
+    }
+    
+    public void resetGame(){
+     
+       board = new int[][]{
+            {0, 0, 0},
+            {0, 0, 0},
+            {0, 0, 0}
+        };
+
     }
 
     
